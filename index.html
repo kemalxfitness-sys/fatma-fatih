@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatma & Fatih - Düğün Sayfası</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f2ff;
+      color: #333;
+      padding-bottom: 120px;
+    }
+
+    header {
+      background: linear-gradient(to right, #007BFF, #28A745);
+      color: white;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+    }
+
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+      padding: 10px 15px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+      color: #007BFF;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #007BFF;
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .menu a.active {
+      color: #28A745;
+    }
+
+    .menu a:hover {
+      color: #28A745;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #007BFF;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0f7e9;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #007BFF;
+      margin: 4px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px 0;
+      }
+
+      .menu a {
+        padding: 10px;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .content {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .content h2 {
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .video-container {
+      margin-top: 20px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 7px;
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-box {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: z#ffffffdd;
+      padding: 15px 10px;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .time-box div {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #28A745;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>FATMA & FATİH</h1>
+    <p>Boran Park Düğün Salonları | Tandoğan, Sincan / Ankara</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <a href="index.html">Anasayfa</a>
+      <a href="kina.html">Kına</a>
+
+
+      <a href="salon-tarihi.html">Salon Tarihi</a>
+
+    </div>
+    </div>
+    <a href="indext.html">İletişim</a>
+    </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h2>Hoş Geldiniz</h2>
+    <p>FATMA & FATİH'in en mutlu gününe geri sayım başladı!</p>
+
+    <div class="video-container">
+      <video controls>
+        <source src="Comp 1_1.mp4" type="video/mp4" />
+        Tarayıcınız video etiketini desteklemiyor.
+      </video>
+    </div>
+  </div>
+
+  <div class="countdown-box">
+    <div class="countdown">
+      <div class="time-box">
+        <div id="days">--</div>
+        <div class="label">Gün</div>
+      </div>
+      <div class="time-box">
+        <div id="hours">--</div>
+        <div class="label">Saat</div>
+      </div>
+      <div class="time-box">
+        <div id="minutes">--</div>
+        <div class="label">Dakika</div>
+      </div>
+      <div class="time-box">
+        <div id="seconds">--</div>
+        <div class="label">Saniye</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Geri sayım
+    const countdown = () => {
+      const countDate = new Date("2025-09-01T20:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = countDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      if (gap < 0) {
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("seconds").innerText = "0";
+        return;
+      }
+
+      const textDay = Math.floor(gap / day);
+      const textHour = Math.floor((gap % day) / hour);
+      const textMinute = Math.floor((gap % hour) / minute);
+      const textSecond = Math.floor((gap % minute) / second);
+
+      document.getElementById("days").innerText = textDay;
+      document.getElementById("hours").innerText = textHour;
+      document.getElementById("minutes").innerText = textMinute;
+      document.getElementById("seconds").innerText = textSecond;
+    };
+
+    setInterval(countdown, 1000);
+
+    // Hamburger menü aç/kapa
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Aktif menü vurgulama
+    const currentURL = window.location.pathname;
+    const menuLinks = document.querySelectorAll(".menu a");
+    menuLinks.forEach(link => {
+      if (currentURL.includes(link.getAttribute("href"))) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <!DOCTYPE html>
+  <html lang="tr">
+  <nav>
+    <div class="nav-container">
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+    </div>
+    </div>
+  </nav>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
